@@ -1,6 +1,9 @@
 const yourID = "324672376455299074"; //Instructions on how to get this: https://redd.it/40zgse
 const setupCMD = "!r-a"
-let initialMessage = `**اختر القسم اليعجبك بالضغط على ري اكشن**
+let initialMessage = `
+
+**لكشف الفئة الذي تريدها ,اضغط على الأيموجي اسفل الفئة التي تعجبك, في حال لم تعجبك الفئة اضغط على الأيموجي مرة اخرى كي تنحذف الرتبة.** :dizzy:
+
 `;
 
 const roles = ["Public | عام","Games | العاب","Shop | متجر"];
