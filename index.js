@@ -1,10 +1,10 @@
 const yourID = "324672376455299074"; //Instructions on how to get this: https://redd.it/40zgse
-const setupCMD = "!am"
+const setupCMD = "!r-a"
 let initialMessage = `**اختر القسم اليعجبك بالضغط على ري اكشن**
 `;
 
-const roles = ["Fortnite","Anime & Games","Clans"];
-const reactions = ["💻","🕹","🥇"];
+const roles = ["Public | عام","Games | العاب","Shop | متجر"];
+const reactions = ["💻","💻","💻"];
  /*You'll have to set this yourself; read more
                      here https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token*/
 
@@ -20,7 +20,7 @@ if (roles.length !== reactions.length) throw "Roles list and reactions list are 
 function generateMessages(){
     var messages = [];
     messages.push(initialMessage);
-    for (let role of roles) messages.push(`اضغط على ري اكشن لاخذ رتبة **"${role}"**!`); //DONT CHANGE THIS
+    for (let role of roles) messages.push(`**"${role}"**`); //DONT CHANGE THIS
     return messages;
 }
 
