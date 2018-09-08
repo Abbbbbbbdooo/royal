@@ -12,6 +12,25 @@ const reactions = ["💻","💻","💻"];
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '487987736175837185').setName("T");
+client.channels.find('id', '487987736175837185').setName("Th");
+client.channels.find('id', '487987736175837185').setName("The");
+client.channels.find('id', '487987736175837185').setName("The R");
+client.channels.find('id', '487987736175837185').setName("The Ro");
+client.channels.find('id', '487987736175837185').setName("The Roy");
+client.channels.find('id', '487987736175837185').setName("The Roya");
+client.channels.find('id', '487987736175837185').setName("The Royal");
+client.channels.find('id', '487987736175837185').setName("The Royal L");
+client.channels.find('id', '487987736175837185').setName("The Royal Le");
+client.channels.find('id', '487987736175837185').setName("The Royal Leg");
+client.channels.find('id', '487987736175837185').setName("The Royal Lege");
+client.channels.find('id', '487987736175837185').setName("The Royal Legen");
+client.channels.find('id', '487987736175837185').setName("The Royal Legend");
+client.channels.find('id', '487987736175837185').setName("● The Royal Legend ●");
+  }, 3000);
+});
 
 //If there isn't a reaction for every role, scold the user!
 if (roles.length !== reactions.length) throw "Roles list and reactions list are not the same length!";
