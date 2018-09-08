@@ -12,23 +12,23 @@ const reactions = ["💻","💻","💻"];
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-client.on("ready", async  => {
+bot.on("ready", async  => {
 setInterval(function(){
-client.channels.find('id', '487987736175837185').setName("T");
-client.channels.find('id', '487987736175837185').setName("Th");
-client.channels.find('id', '487987736175837185').setName("The");
-client.channels.find('id', '487987736175837185').setName("The R");
-client.channels.find('id', '487987736175837185').setName("The Ro");
-client.channels.find('id', '487987736175837185').setName("The Roy");
-client.channels.find('id', '487987736175837185').setName("The Roya");
-client.channels.find('id', '487987736175837185').setName("The Royal");
-client.channels.find('id', '487987736175837185').setName("The Royal L");
-client.channels.find('id', '487987736175837185').setName("The Royal Le");
-client.channels.find('id', '487987736175837185').setName("The Royal Leg");
-client.channels.find('id', '487987736175837185').setName("The Royal Lege");
-client.channels.find('id', '487987736175837185').setName("The Royal Legen");
-client.channels.find('id', '487987736175837185').setName("The Royal Legend");
-client.channels.find('id', '487987736175837185').setName("● The Royal Legend ●");
+bot.channels.find('id', '487993482523443230').setName("T");
+bot.channels.find('id', '487993482523443230').setName("Th");
+bot.channels.find('id', '487993482523443230').setName("The");
+bot.channels.find('id', '487993482523443230').setName("The R");
+bot.channels.find('id', '487993482523443230').setName("The Ro");
+bot.channels.find('id', '487993482523443230').setName("The Roy");
+bot.channels.find('id', '487993482523443230').setName("The Roya");
+bot.channels.find('id', '487993482523443230').setName("The Royal");
+bot.channels.find('id', '487993482523443230').setName("The Royal L");
+bot.channels.find('id', '487993482523443230').setName("The Royal Le");
+bot.channels.find('id', '487993482523443230').setName("The Royal Leg");
+bot.channels.find('id', '487993482523443230').setName("The Royal Lege");
+bot.channels.find('id', '487993482523443230').setName("The Royal Legen");
+bot.channels.find('id', '487993482523443230').setName("The Royal Legend");
+bot.channels.find('id', '487993482523443230').setName("● The Royal Legend ●");
   }, 3000);
 });
 
