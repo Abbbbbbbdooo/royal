@@ -6,8 +6,8 @@ let initialMessage = `
 
 `;
 
-const roles = ["Public | عام","Games | العاب","Shop | متجر"];
-const reactions = ["💻","💻","💻"];
+const roles = ["Public | عام","Fortnite | فورتنايت","Minecraft | ماين كرافت","Creative Destruction | كريتيف ديستركشن","Shop | متجر"];
+const reactions = ["💻","💻","💻","💻","💻"];
  /*You'll have to set this yourself; read more
                      here https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token*/
 
