@@ -117,6 +117,42 @@ bot.on('message', msg => {
 
 });
 
+ bot.on('message', message => { 
+if(message.content.startsWith('$sug')) {
+      if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات :x:`);
+   let args = message.content.split(" ").slice(1);
+   var ID = message.author.id 
+   var emben = new Discord.RichEmbed()
+   .setTimestamp()
+   .setTitle(`:x: Error`)
+   .setDescription(`الرجاء كتابت إقتراحك بعد الأمر `)
+   if(!args.join(" ")) return message.channel.send(emben).then(message => {message.delete(50000)});
+   var embet = new Discord.RichEmbed()
+   .setTitle(`:white_check_mark: Success!`)
+   .setTimestamp()
+   .setDescription(`شكراً على اقتراحك !`)
+.addField(`إقتراحك : `,args.join(" "))
+   var embed = new Discord.RichEmbed()
+   .setTimestamp()
+   .setColor('RANDOM')
+   .setThumbnail(message.author.avatarURL)
+   .setFooter(`${message.author.username}#${message.author.discriminator}`)
+   .setTitle(`${bot.user.username}`)
+   .setURL(`${bot.user.avatarURL}`)
+   .setDescription(`**
+__المقترح__ :\n <@${ID}>\n
+__الإقتراح__ :  \`\`\`${args.join(" ")}\`\`\`**`)
+           bot.channels.get("473966699629117453").send(embed)
+  message.channel.sendEmbed(embet).then(message => {message.delete(50000)})
+     .then(function (message) {
+        message.react('✅')
+        message.react('❌')
+      })
+      }
+    }
+
+}
+});
 bot.login(process.env.BOT_TOKEN)
 	
 	
