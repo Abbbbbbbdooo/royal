@@ -144,13 +144,7 @@ __المقترح__ :\n <@${ID}>\n
 __الإقتراح__ :  \`\`\`${args.join(" ")}\`\`\`**`)
            bot.channels.get("473966699629117453").send(embed)
   message.channel.sendEmbed(embet).then(message => {message.delete(50000)})
-     .then(function (message) {
-        message.react('✅')
-        message.react('❌')
-      })
-      }
-    }
-
+            message.react("📩")
 }
 });
 bot.login(process.env.BOT_TOKEN)
