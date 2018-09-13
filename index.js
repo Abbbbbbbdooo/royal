@@ -92,30 +92,6 @@ bot.on('raw', event => {
 
 
 
-bot.on('message', msg => {
-
-  if(msg.content.startsWith('$sug')) {
-    if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
-    if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('**الرجاء إضافة روم بإسم (suggestions)**');
-    let args = msg.content.split(" ").slice(1);
-    if(!args[1]) return msg.reply('الرجاء كتابة الاقتراح')
-    
-    if(msg.guild.channels.find('name', 'suggestions')) {
-     
-    msg.guild.channels.find('name', 'suggestions').send(`
-      تم الاقتراح من قبل : ${msg.member}
-
-      الاقتراح : 
-      ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
-      `)
-      .then(function (message) {
-        message.react('✅')
-        message.react('❌')
-      })
-      }
-    }
-
-});
 
  bot.on('message', message => { 
 if(message.content.startsWith('$sug')) {
