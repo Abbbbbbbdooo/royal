@@ -90,35 +90,31 @@ bot.on('raw', event => {
     }   
 });
 
-bot.on('message', message => { 
- if(message.content.startsWith("$sug")){
-      if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات :x:`);
-   let args = message.content.split(" ").slice(1);
-   var ID = message.author.id 
-   var emben = new Discord.RichEmbed()
-   .setTimestamp()
-   .setTitle(`:x: Error`)
-   .setDescription(`الرجاء كتابت إقتراحك بعد الأمر `)
-   if(!args.join(" ")) return message.channel.send(emben).then(message => {message.delete(50000)});
-   var embet = new Discord.RichEmbed()
-   .setTitle(`:white_check_mark: Success!`)
-   .setTimestamp()
-   .setDescription(`شكراً على اقتراحك !`)
-.addField(`إقتراحك : `,args.join(" "))
-   var embed = new Discord.RichEmbed()
-   .setTimestamp()
-   .setColor('RANDOM')
-   .setThumbnail(message.author.avatarURL)
-   .setFooter(`${message.author.username}#${message.author.discriminator}`)
-   .setTitle(`${bot.user.username}`)
-   .setURL(`${bot.user.avatarURL}`)
-   .setDescription(`**
-__المقترح__ :\n <@${ID}>\n
-__الإقتراح__ :  \`\`\`${args.join(" ")}\`\`\`**`)
-           bot.channels.get("489927876297228288").send(embed)
-  message.channel.sendEmbed(embet).then(message => {message.delete(50000)})
-            message.react("👍","👎")
-}
+
+
+client.on('message', msg => {
+
+  if(msg.content.startsWith('!suggest')) {
+    if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
+    if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('**الرجاء إضافة روم بإسم (suggestions)**');
+    let args = msg.content.split(" ").slice(1);
+    if(!args[1]) return msg.reply('الرجاء كتابة الاقتراح')
+    
+    if(msg.guild.channels.find('name', 'suggestions')) {
+     
+    msg.guild.channels.find('name', 'suggestions').send(`
+      تم الاقتراح من قبل : ${msg.member}
+
+      الاقتراح : 
+      ${args.join(" ").split(msg.mentions.members.first()).slice(' ')}
+      `)
+      .then(function (message) {
+        message.react('✅')
+        message.react('❌')
+      })
+      }
+    }
+
 });
 
 bot.login(process.env.BOT_TOKEN)
