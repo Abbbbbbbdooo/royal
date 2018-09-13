@@ -13,6 +13,7 @@ const reactions = ["📢","🎮","🖱","🕹","💳"];
 
 //Load up the bot...
 const Discord = require('discord.js');
+const prefix = '#';
 const bot = new Discord.Client();
 
 bot.on("ready", async  => {
