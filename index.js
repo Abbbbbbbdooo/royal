@@ -13,7 +13,6 @@ const reactions = ["📢","🎮","🖱","🕹","💳"];
 
 //Load up the bot...
 const Discord = require('discord.js');
-const prefix = '#';
 const bot = new Discord.Client();
 
 bot.on("ready", async  => {
@@ -92,7 +91,7 @@ bot.on('raw', event => {
 });
 
 bot.on('message', message => { 
-if(message.content.startsWith(prefix + 'sug')) {
+ if(message.content.startsWith("$sug")){
       if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات :x:`);
    let args = message.content.split(" ").slice(1);
    var ID = message.author.id 
