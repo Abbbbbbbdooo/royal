@@ -92,9 +92,9 @@ bot.on('raw', event => {
 
 
 
-client.on('message', msg => {
+bot.on('message', msg => {
 
-  if(msg.content.startsWith('!suggest')) {
+  if(msg.content.startsWith('$sug')) {
     if(!msg.channel.guild) return msg.reply('** هاذا الامر فقط للسيرفرات**');
     if(!msg.guild.channels.find('name', 'suggestions')) return msg.reply('**الرجاء إضافة روم بإسم (suggestions)**');
     let args = msg.content.split(" ").slice(1);
