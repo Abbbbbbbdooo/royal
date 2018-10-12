@@ -92,7 +92,7 @@ bot.on('raw', event => {
 });
 
 
-  client.on('message', message => { 
+  bot.on('message', message => { 
 if(message.content.startsWith(prefix + 'sug')) {
       if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات :x:`);
    let args = message.content.split(" ").slice(1);
@@ -112,12 +112,12 @@ if(message.content.startsWith(prefix + 'sug')) {
    .setColor('RANDOM')
    .setThumbnail(message.author.avatarURL)
    .setFooter(`${message.author.username}#${message.author.discriminator}`)
-   .setTitle(`${client.user.username}`)
-   .setURL(`${client.user.avatarURL}`)
+   .setTitle(`${bot.user.username}`)
+   .setURL(`${bot.user.avatarURL}`)
    .setDescription(`**
 __المقترح__ :\n <@${ID}>\n
 __الإقتراح__ :  \`\`\`${args.join(" ")}\`\`\`**`)
-           client.channels.get("500361564969369601").send(embed)
+           bot.channels.get("500361564969369601").send(embed)
   message.channel.sendEmbed(embet).then(message => {message.delete(50000)})
             message.react("📩")
 }
