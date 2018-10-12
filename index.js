@@ -171,64 +171,6 @@ if (message.content.startsWith(prefix + 'setplay')) {
 });
 
 
-bot.on('message', message => {
-
-if(!message.channel.guild) return;
-
-if(message.content.startsWith(prefix + 'اسحب')) {
-
- if (message.member.hasPermission("MOVE_MEMBERS")) {
-
- if (message.mentions.users.size === 0) {
-
- return message.channel.send("" +prefix+ "** ❌  لم يتم العثور على العضو المطلوب **").then(msg => msg.delete(5000));
-
-}
-
-if (message.member.voiceChannel != null) {
-
- if (message.mentions.members.first().voiceChannel != null) {
-
- var authorchannel = message.member.voiceChannelID;
-
- var usermentioned = message.mentions.members.first().id;
-
-var embed = new Discord.RichEmbed()
-
- .setTitle("Succes!")
-
- 
-
- 
-
-var embed = new Discord.RichEmbed()
-
-  let mentions = message.mentions.members.first();
-
-message.channel.send(`✅ @${mentions.user} **moved to **${message.member.voiceChannel.name}`).then(msg => msg.delete(5000));
-
- message.guild.members.get(usermentioned).setVoiceChannel(authorchannel).then(m => message.channel.send(embed))
-
-message.guild.members.get(usermentioned).send(embed)
-
-} else {
-
-message.channel.send("** ❌  العضو يجب أن يكون متواجد بروم صوتي **").then(msg => msg.delete(5000));
-
-}
-
-} else {
-
- message.channel.send("** ❌  You must be in voice channel !**").then(msg => msg.delete(5000));
-
-}
-
-} else {
-
-message.react("")
-
- }}});
-
 bot.login(process.env.BOT_TOKEN)
 	
 	
