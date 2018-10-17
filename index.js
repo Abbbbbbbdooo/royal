@@ -14,7 +14,6 @@ const reactions = ["📢","🎮","🖱","🕹","💳"];
 //Load up the bot...
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-var prefix = '$';
 
 bot.on("ready", async  => {
 setInterval(function(){
@@ -173,4 +172,4 @@ if (message.content.startsWith(prefix + 'setplay')) {
 
 bot.login(process.env.BOT_TOKEN)
 	
-	
+const prefix = '$';
