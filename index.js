@@ -153,7 +153,7 @@ if (message.content.startsWith(prefix + 'setplay')) {
 const arraySort = require('array-sort'),
 table = require('table');
 
-client.on('message' , async (message) => {
+bot.on('message' , async (message) => {
 
     if(message.content.startsWith(prefix + "top")) {
 
