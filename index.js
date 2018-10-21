@@ -118,7 +118,7 @@ bot.on('message', message => {
             };
                 message.guild.createChannel(`ticket-${message.author.username}`, "text").then(ticket => {
                     message.delete()
-                        message.channel.send(`Your ticket has been created. [ ${ticket} ]`);
+                        message.channel.send(`تم انشاء تذكرة. [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
                     ticketsStation.setPosition(1);
                         ticket.overwritePermissions(message.guild.id, {
