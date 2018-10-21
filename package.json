@@ -9,6 +9,7 @@
   "dependencies": {
    "discord.js": "^11.3.2",
    "array-sort": "^1.0.0",
+    "fs": "0.0.2",
    "table": "^5.1.0"
   }
 }
