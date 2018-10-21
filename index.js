@@ -362,12 +362,10 @@ function fromMilli(milli) {
 // Sets the timer
 function timer(msg, duration) {
 
-  bot.reply(msg, 'Timer has been set for ' + fromMilli(duration));
   log(msg, 'Timer has been set for ' + fromMilli(duration));
 
   setTimeout(function() {
 
-    bot.reply(msg, 'Timer has finished!');
 
   }, duration);
 }
