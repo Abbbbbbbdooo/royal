@@ -116,7 +116,7 @@ bot.on('message', message => {
             if(!ticketsStation) {
                 message.guild.createChannel("TICKETS", "category");
             };
-                message.guild.createChannel(`ticket-${message.author.username}`, "text").then(ticket => {
+                message.guild.createChannel(`ticket-${message.author.id}`, "text").then(ticket => {
                     message.delete()
                         message.channel.send(`تم انشاء تذكرة. [ ${ticket} ]`);
                     ticket.setParent(ticketsStation);
@@ -134,7 +134,7 @@ bot.on('message', message => {
                                     READ_MESSAGES: true
                                 });
                     let embed = new Discord.RichEmbed()
-                                .setTitle('**The Royal Manager.**')
+                                .setTitle('**The Royal Manager**')
                                 .setColor("RANDOM")
                                 .setThumbnail(`${message.author.avatarURL}`)
                                 .addField('الموضوع', args)
