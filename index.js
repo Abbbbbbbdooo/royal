@@ -139,7 +139,7 @@ bot.on('message', message => {
                                 .setThumbnail(`${message.author.avatarURL}`)
                                 .addField('الموضوع', args)
                                 .addField('صاحب التكت', message.author)
-                                .addField('الروم', `<#${message.channel.id}>`);
+                                .addField('تم انشاء التكت من روم', `<#${message.channel.id}>`);
 
                                 ticket.sendEmbed(embed);
                 }) .catch();
@@ -150,7 +150,7 @@ bot.on('message', message => {
             return;
         };  
                 let embed = new Discord.RichEmbed()
-                    .setAuthor("هل انت متأكد من اغلاق التكت؟ اكتب **نعم** اذا تريد اغلاقه")
+                    .setAuthor("هل انت متأكد من اغلاق التكت؟ نعم اذا تريد اغلاقه")
                     .setColor("RANDOM");
                     message.channel.sendEmbed(embed) .then(codes => {
 
@@ -165,7 +165,7 @@ bot.on('message', message => {
                             message.channel.delete();
                         }) .catch(() => {
                             codes.delete()
-                                .then(message.channel.send('**تم الغاء تسكير التذكرة.**')) .then((c) => {
+                                .then(message.channel.send('**تم الغاء اغلاق التكت.**')) .then((c) => {
                                     c.delete(4000);
                                 })
                                     
