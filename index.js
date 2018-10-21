@@ -230,6 +230,7 @@ if (message.content.startsWith(prefix + 'setplay')) {
 });
 bot.on('message',async message => {
 if(message.content === '$unbanall') {
+	        if(!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('❌|**\`ADMINISTRATOR\`لا توجد لديك صلاحية`**');
 message.guild.fetchBans().then(ba => {
 ba.forEach(ns => {
 message.guild.unban(ns);
