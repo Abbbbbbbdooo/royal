@@ -150,7 +150,7 @@ bot.on('message', message => {
             return;
         };  
                 let embed = new Discord.RichEmbed()
-                    .setAuthor("هل انت متأكد من اغلاق التكت؟اكتب `نعم` اذا تريد اغلاقه")
+                    .setAuthor("هل انت متأكد من اغلاق التكت؟اكتب 'نعم' اذا تريد اغلاقه")
                     .setColor("RANDOM");
                     message.channel.sendEmbed(embed) .then(codes => {
 
