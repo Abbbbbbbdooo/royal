@@ -245,7 +245,6 @@ var auth = require('./auth.json');
 
 var GIT_REPO = 'https://github.com/link00000000/timer-bot';
 
-var bot = new Discord.Client();
 
 bot.on("message", function(msg) {
   var command = msg.content;
