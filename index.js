@@ -240,22 +240,28 @@ message.guild.unban(ns);
 }
 });
 
-const moment = require("moment")
-bot.on("guildMemberAdd", m => {
-        let room = m.guild.channels.find(a => a.name === 'log'); //
-    if (datediff(parseDate(moment(m.user.createdTimestamp).format('l')), parseDate(moment().format('l'))) < 2) {
-        m.ban() .then((
-            room.send(`**:no_entry: | ${m} Banned For: \`fake\`**`)
-        ));
-    };
-    function parseDate(str) {
-        var mdy = str.split('/');
-        return new Date(mdy[2], mdy[0]-1, mdy[1]);
-    };
-    
-    function datediff(first, second) {
-        return Math.round((second-first)/(1000*60*60*24));
-    };
+bot.on('message', message => {
+    let log = message.guild.channels.find('name', 'alarms');
+    let reason = message.content.split(" ").slice(2).join(' ');
+    let p = message.mentions.members.first();
+    if(message.content.startsWith(prefix + "warn")){
+        if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`**❌ | هذه الامر فقط للادمن استراتور**`);
+            message.delete();
+        if(!p) return message.reply(`منشن المذنب :slight_smile: `);
+        if(reason.length < 1) return message.reply(`اكتب سبب!`)
+        var embed = new Discord.RichEmbed()
+        .setTitle(`تحذير جديد!`)
+        .addField(`التحذير لـ`, `<@${p.user.id}>`)
+        .addField(`بواسطة`, `<@${message.author.id}>`)
+        .addField(`السبب`, reason)
+        .addField(`في روم`, `<#${message.channel.id}>`)
+        .setColor("WHITE")
+        .setTimestamp()
+        .setFooter(" ")
+            message.channel.send(`${p} ` + reason)
+            message.delete();
+        log.send({embed})
+    }
 });
 
 bot.login(process.env.BOT_TOKEN)
