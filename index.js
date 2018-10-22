@@ -250,14 +250,13 @@ bot.on('message', message => {
         if(!p) return message.reply(`منشن المذنب :slight_smile: `);
         if(reason.length < 1) return message.reply(`اكتب سبب!`)
         var embed = new Discord.RichEmbed()
-        .setTitle(`تحذير جديد!`)
-        .addField(`التحذير لـ`, `<@${p.user.id}>`)
-        .addField(`بواسطة`, `<@${message.author.id}>`)
-        .addField(`السبب`, reason)
-        .addField(`في روم`, `<#${message.channel.id}>`)
-        .setColor("WHITE")
-        .setTimestamp()
-        .setFooter(" ")
+        .setTitle('**The Royal Warning**')
+        .setColor("RANDOM")
+        .setThumbnail(`${message.author.avatarURL}`)
+        .addField('تحذير لـ', `<@${p.user.id}>`)
+        .addField('بواسطة', `<@${message.author.id}>`)
+        .addField('السبب', reason)	
+        .addField('تم تحذير العضو من روم', `<#${message.channel.id}>`);
             message.channel.send(`${p} ` + reason)
             message.delete();
         log.send({embed})
