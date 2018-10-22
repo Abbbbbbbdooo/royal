@@ -257,7 +257,7 @@ bot.on('message', message => {
         .addField('بواسطة', `<@${message.author.id}>`)
         .addField('السبب', reason)	
         .addField('تم تحذير العضو من روم', `<#${message.channel.id}>`);
-            message.channel.send(`${p} ` + reason)
+            message.channel.send(`تم تحذير العضو السبب:` + reason)
             message.delete();
         log.send({embed})
     }
