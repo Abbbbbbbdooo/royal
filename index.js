@@ -192,21 +192,21 @@ bot.on('message', message => {
   if (message.content.startsWith(prefix + 'setwatch')) {
   bot.user.setActivity(argresult, {type: 'WATCHING'})
      console.log('test' + argresult);
-    message.channel.sendMessage(`Watch Now: **${argresult}`)
+    message.channel.sendMessage(`Watch Now: **${argresult}**`)
 } 
 
  
   if (message.content.startsWith(prefix + 'setlis')) {
   bot.user.setActivity(argresult, {type: 'LISTENING'})
      console.log('test' + argresult);
-    message.channel.sendMessage(`LISTENING Now: **${argresult}`)
+    message.channel.sendMessage(`LISTENING Now: **${argresult}**`)
 } 
 
 
 if (message.content.startsWith(prefix + 'setname')) {
   bot.user.setUsername(argresult).then
       message.channel.sendMessage(`Username Changed To **${argresult}**`)
-  return message.reply("You Can change the username 2 times per hour");
+  return message.reply("You Can Only Chanage Name 2 Times Per Hour");
 } 
 
 if (message.content.startsWith(prefix + 'setavatar')) {
@@ -217,12 +217,12 @@ if (message.content.startsWith(prefix + 'setavatar')) {
 if (message.content.startsWith(prefix + 'setstream')) {
   bot.user.setGame(argresult, "https://www.twitch.tv/peery13");
      console.log('test' + argresult);
-    message.channel.sendMessage(`Streaming: **${argresult}`)
+    message.channel.sendMessage(`Streaming: **${argresult}**`)
 } 
 if (message.content.startsWith(prefix + 'setplay')) {
   bot.user.setGame(argresult);
      console.log('test' + argresult);
-    message.channel.sendMessage(`Playing: **${argresult}`)
+    message.channel.sendMessage(`Playing: **${argresult}**`)
 } 
 
 
