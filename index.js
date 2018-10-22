@@ -182,24 +182,6 @@ bot.on('message', message => {
 
 
 
-bot.on('message', message => {
-    if(message.content.startsWith(prefix + "server")){
-        if(!message.member.hasPermission('ADMINSTRATION')) return message.reply(`:x: | هذا الامر فقط للادمن استراتور`);
-        var embed = new Discord.RichEmbed();
-        embed.setAuthor(`${message.guild.name}`, message.guild.iconURL)
-        embed.addField(`:id: **اي دي سيرفر**`, `${message.guild.id}`)
-        embed.addField(`:calendar: **صنع في**`, `${message.guild.createdAt}`)
-        embed.addField(`:crown: **صاحب السيرفر**`, `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator} [${message.guild.owner.user.id}]`)
-        embed.addField(`:speech_balloon: **الرومات [${message.guild.channels.size}]**`, `${message.guild.channels.filter(e => e.type === "text").size} text | ${message.guild.channels.filter(e => e.type === "voice").size} Voice | ${message.guild.channels.filter(e => e.type === "category").size} Category`)
-        embed.addField(`:busts_in_silhouette: **الاعضاء [${message.guild.memberCount}]**`, `**${message.guild.members.filter(a => a.presence.status !== 'offline').size}** Online`)
-        embed.addField(`:earth_africa: **اخرى**`, `**Region:** ${message.guild.region} \n**Verification Level:** ${message.guild.verificationLevel}`)
-        embed.addField(`:closed_lock_with_key: **الرتب**`, `**[${message.guild.roles.size}]**`)
-        embed.setTimestamp()
-        embed.setColor("RANDOM")
-        embed.setFooter(" ")
-        message.channel.send({embed})
-    }
-});
 
 bot.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
