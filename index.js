@@ -249,7 +249,7 @@ bot.on('message', message => {
         if(!p) return message.reply(`منشن المذنب :slight_smile: `);
         if(reason.length < 1) return message.reply(`اكتب سبب!`)
         var embed = new Discord.RichEmbed()
-        .setTitle('**The Royal Warning**')
+        .setTitle('**The Royal Warns**')
         .setColor("RANDOM")
         .setThumbnail(`${message.author.avatarURL}`)
         .addField('تحذير لـ', `<@${p.user.id}>`)
@@ -261,6 +261,32 @@ bot.on('message', message => {
         log.send({embed})
     }
 });
+
+bot.on('message', message => {
+    let log = message.guild.channels.find('name', 'alarms');
+    let punsh = message.content.split(" ").slice(2).join(' ');
+    let dlel = message.content.split(" ").slice(2).join(' ');	
+    let p = message.mentions.members.first();
+    if(message.content.startsWith(prefix + "punsh")){
+        if (!message.member.roles.find('name', 'Staff')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
+        if(!p) return message.reply(`منشن المذنب :slight_smile: `);
+        if(punsh.length < 1) return message.reply(`اكتب سبب!`)
+	if(dlel.length < 2) return message.reply(`ارسل صورة كدليل`)
+        var embed = new Discord.RichEmbed()
+        .setTitle('**The Royal Punshiments**')
+        .setColor("RANDOM")
+        .setThumbnail(`${message.author.avatarURL}`)
+        .addField('تم معاقبة', `<@${p.user.id}>`)
+        .addField('بواسطة', `<@${message.author.id}>`)
+        .addField('العقاب', punsh)	
+	.addField('الدليل', dlel)
+        .addField('تم تنفيذ العقوبة من روم', `<#${message.channel.id}>`);
+            message.channel.send(`**تم تدوين العقاب** :white_check_mark: `)
+            message.delete();
+        log.send({embed})
+    }
+});
+
 
 
 
