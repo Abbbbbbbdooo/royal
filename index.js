@@ -308,8 +308,9 @@ bot.on('message', message => {
 
 bot.on('message', message => {
             if(!message.channel.guild) return;
-let args = message.content.split(' ').slice(1).join(' ');
+let args = message.content.split(' ').slice(1).join(' ');	
 if (message.content.startsWith('$bc')){
+if(!message.member.hasPermission("ADMINISTRATOR")) return;	
 	 var embed = new Discord.RichEmbed()
         .setTitle('**The Royal Broadcast**')
         .setColor("RANDOM")
