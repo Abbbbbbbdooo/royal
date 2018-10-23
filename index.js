@@ -293,7 +293,7 @@ bot.on('message', message => {
         if(!p) return message.reply(`منشن  صاحب طلب الادارة :slight_smile: `);
         if(ad.length < 1) return message.reply(`مرفوض او مقبول؟!`)    
         var embed = new Discord.RichEmbed()
-        .setTitle('**The Royal Punshiments**')
+        .setTitle('**The Royal Applications**')
         .setColor("RANDOM")
         .setThumbnail(`${message.author.avatarURL}`)
         .addField('المقدم', `<@${p.user.id}>`)
