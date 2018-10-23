@@ -245,7 +245,7 @@ bot.on('message', message => {
     let reason = message.content.split(" ").slice(2).join(' ');
     let p = message.mentions.members.first();
     if(message.content.startsWith(prefix + "warn")){
-        if(!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`**❌ | هذه الامر فقط للادمن استراتور**`);
+    let staff = message.guild.roles.find("name","Staff"); return message.reply(`**❌ | هذا الأمر فقط للادارة**`);
             message.delete();
         if(!p) return message.reply(`منشن المذنب :slight_smile: `);
         if(reason.length < 1) return message.reply(`اكتب سبب!`)
@@ -257,7 +257,7 @@ bot.on('message', message => {
         .addField('بواسطة', `<@${message.author.id}>`)
         .addField('السبب', reason)	
         .addField('تم تحذير العضو من روم', `<#${message.channel.id}>`);
-            message.channel.send(`تم تحذير العضو السبب:` + reason)
+            message.channel.send(`**تم تحذير العضو** :white_check_mark: `)
             message.delete();
         log.send({embed})
     }
