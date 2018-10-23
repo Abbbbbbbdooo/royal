@@ -306,6 +306,22 @@ bot.on('message', message => {
 });
 
 
+bot.on('message', message => {
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('$bc')){
+	 var embed = new Discord.RichEmbed()
+        .setTitle('**The Royal Broadcast**')
+        .setColor("RANDOM")
+        .setThumbnail(`${message.author.avatarURL}`)
+        .addField('جار ارسال البرودكاست')
+        .addField('عدد الاعضاء المرسل لهم', `${bot.users.size}`)
+message.channel.sendMessage(' ')
+bot.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
 
 
 bot.login(process.env.BOT_TOKEN)
