@@ -269,8 +269,8 @@ bot.on('message', message => {
     let p = message.mentions.members.first();
     if(message.content.startsWith(prefix + "punsh")){
         if (!message.member.roles.find('name', 'Staff')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
-        if(!p) return message.reply(`منشن المذنب :slight_smile: `);
-        if(punsh.length < 1) return message.reply(`اكتب سبب!`)
+        if(!p) return message.reply(`منشن  المعاقب :slight_smile: `);
+        if(punsh.length < 1) return message.reply(`اكتب العقاب!`)
 	if(dlel.length < 2) return message.reply(`ارسل صورة كدليل`)
         var embed = new Discord.RichEmbed()
         .setTitle('**The Royal Punshiments**')
