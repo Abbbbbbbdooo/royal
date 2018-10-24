@@ -246,7 +246,7 @@ bot.on('message', message => {
     let reason = message.content.split(" ").slice(2).join(' ');
     let p = message.mentions.members.first();
     if(message.content.startsWith(prefix + "warn")){
-        if (!message.member.roles.find('name','َ')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
+        if (!message.member.roles.find('name','ادارة')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
         if(!p) return message.reply(`منشن المذنب :slight_smile: `);
         if(reason.length < 1) return message.reply(`اكتب سبب!`)
         var embed = new Discord.RichEmbed()
@@ -268,7 +268,7 @@ bot.on('message', message => {
     let punsh = message.content.split(" ").slice(2).join(' ');
     let p = message.mentions.members.first();
     if(message.content.startsWith(prefix + "punsh")){
-        if (!message.member.roles.find('name', 'Staff')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
+        if (!message.member.roles.find('name', 'ادارة')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
         if(!p) return message.reply(`منشن  المعاقب :slight_smile: `);
         if(punsh.length < 1) return message.reply(`اكتب العقاب!`)    
         var embed = new Discord.RichEmbed()
@@ -290,7 +290,7 @@ bot.on('message', message => {
     let ad = message.content.split(" ").slice(2).join(' ');
     let p = message.mentions.members.first();
     if(message.content.startsWith(prefix + "apply")){
-        if (!message.member.roles.find('name', 'Staff')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
+        if (!message.member.roles.find('name', 'ادارة')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
         if(!p) return message.reply(`منشن  صاحب طلب الادارة :slight_smile: `);
         if(ad.length < 1) return message.reply(`مرفوض او مقبول؟!`)    
         var embed = new Discord.RichEmbed()
