@@ -246,7 +246,7 @@ bot.on('message', message => {
     let reason = message.content.split(" ").slice(2).join(' ');
     let p = message.mentions.members.first();
     if(message.content.startsWith(prefix + "warn")){
-        if (!message.member.roles.find('name', 'Staff')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
+        if (!message.member.roles.find('name','َ')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
         if(!p) return message.reply(`منشن المذنب :slight_smile: `);
         if(reason.length < 1) return message.reply(`اكتب سبب!`)
         var embed = new Discord.RichEmbed()
