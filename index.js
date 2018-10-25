@@ -308,7 +308,7 @@ bot.on('message', message => {
 
 
 const moment = require("moment")
-client.on("guildMemberAdd", m => {
+bot.on("guildMemberAdd", m => {
         let room = m.guild.channels.find(a => a.name === 'log'); //
     if (datediff(parseDate(moment(m.user.createdTimestamp).format('l')), parseDate(moment().format('l'))) < 2) {
         m.ban() .then((
