@@ -152,8 +152,6 @@ bot.on('message', message => {
 	}; 
 
                         
-   
-                                })
                                     
                             
                         })
