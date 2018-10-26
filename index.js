@@ -161,12 +161,9 @@ bot.on('message', message => {
                             time: 20000,
                             errors: ['time']
                         })
-                        .then((collect) => {
-                            message.channel.delete();
-                        }) .catch(() => {
-                            codes.delete()
-                                .then(message.channel.send('**تم الغاء اغلاق التكت.**')) .then((c) => {
-                                    c.delete(4000);
+                    .then((collected) => {
+                    message.channel.delete();
+				
                                 })
                                     
                             
