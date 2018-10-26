@@ -150,13 +150,13 @@ bot.on('message', message => {
             return;
         };  
                 let embed = new Discord.RichEmbed()
-                    .setAuthor("هل انت متأكد من اغلاق التكت؟اكتب 'نعم' اذا تريد اغلاقه")
+                    .setAuthor("هل انت متأكد من اغلاق التكت؟ كرر الامر اذا كنت متأكد")
                     .setColor("RANDOM");
                     message.channel.sendEmbed(embed) .then(codes => {
 
                     
                         const filter = msg => msg.content.startsWith(prefix + 'close');
-                        message.channel.awaitMessages(response => response.content === 'نعم', {
+                        message.channel.awaitMessages(response => response.content === '$close', {
                             max: 1,
                             time: 20000,
                             errors: ['time']
