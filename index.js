@@ -148,22 +148,11 @@ bot.on('message', message => {
             if(!message.member.hasPermission("ADMINISTRATOR")) return;
         if(!message.channel.name.startsWith("ticket")) {
             return;
-        };  
-                let embed = new Discord.RichEmbed()
-                    .setAuthor("هل انت متأكد من اغلاق التكت؟ كرر الامر اذا كنت متأكد")
-                    .setColor("RANDOM");
-                    message.channel.sendEmbed(embed) .then(codes => {
+     message.channel.delete();
+	}; 
 
-                    
-                        const filter = msg => msg.content.startsWith(prefix + 'close');
-                        message.channel.awaitMessages(response => response.content === '$close', {
-                            max: 1,
-                            time: 20000,
-                            errors: ['time']
-                        })
-                    .then((collected) => {
-                    message.channel.delete();
-				
+                        
+   
                                 })
                                     
                             
