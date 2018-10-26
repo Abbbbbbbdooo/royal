@@ -149,19 +149,8 @@ bot.on('message', message => {
         if(!message.channel.name.startsWith("ticket")) {
             return;
      message.channel.delete();
-	}; 
-
-                        
-                                    
-                            
-                        })
-
-
-            
-
-
-            
-    }
+	};   
+    
 });
 
 
