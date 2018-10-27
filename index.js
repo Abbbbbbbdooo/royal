@@ -1,13 +1,13 @@
 const yourID = "324672376455299074"; //Instructions on how to get this: https://redd.it/40zgse
-const setupCMD = "!r-a"
+const setupCMD = "!event-start"
 let initialMessage = `
 
-**لكشف الفئة الذي تريدها ,اضغط على الأيموجي اسفل الفئة التي تعجبك, في حال لم تعجبك الفئة اضغط على الأيموجي مرة اخرى كي تنحذف الرتبة.** :dizzy:
+**للمشاركة في الفعالية اضغط على الاموجي**
 
 `;
 
-const roles = ["Public | عام","Fortnite | فورتنايت","Minecraft | ماين كرافت","Creative Destruction | كريتيف ديستركشن","Shop | متجر"];
-const reactions = ["📢","🎮","🖱","🕹","💳"];
+const roles = ["Event"];
+const reactions = ["📢"];
  /*You'll have to set this yourself; read more
                      here https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token*/
 
