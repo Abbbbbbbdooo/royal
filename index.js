@@ -101,7 +101,6 @@ __الإقتراح__ :  \`\`\`${args.join(" ")}\`\`\`**`)
             message.react("📩")
 }
 });
-
 bot.on('message', message => {
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
@@ -149,18 +148,7 @@ bot.on('message', message => {
         if(!message.channel.name.startsWith("ticket")) {
             return;
         };  
-
-                    message.channel.send.then(codes => {
-                            codes.delete()
-
-           
-                                })
-                                    
-                            
-                        })
-
-
-                    })
+                            message.channel.delete();
 
 
             
