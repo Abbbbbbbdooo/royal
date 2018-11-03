@@ -381,7 +381,7 @@ bot.on("message", function(msg) {
 
   }
 });
-/
+
 // Converts minutes and seconds into milliseconds
 function toMilli(min, sec) {
 
