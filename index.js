@@ -260,26 +260,6 @@ bot.on('message', message => {
     }
 });
 
-bot.on('message', message => {
-    let log = message.guild.channels.find('name', 'رفض-قبول');
-    let ad = message.content.split(" ").slice(2).join(' ');
-    let p = message.mentions.members.first();
-    if(message.content.startsWith(prefix + "apply")){
-        if (!message.member.roles.find('name', 'ادارة')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
-        if(!p) return message.reply(`منشن  صاحب طلب الادارة :slight_smile: `);
-        if(ad.length < 1) return message.reply(`مرفوض او مقبول؟!`)    
-        var embed = new Discord.RichEmbed()
-        .setTitle('**The Royal Applications**')
-        .setColor("RANDOM")
-        .setThumbnail(`${message.author.avatarURL}`)
-        .addField('المقدم', `<@${p.user.id}>`)
-        .addField('الاداري المسؤول', `<@${message.author.id}>`)
-        .addField('مقبول / مرفوض', ad)	
-            message.channel.send(`**Done** :white_check_mark: `)
-            message.delete();
-        log.send({embed})
-    }
-});
 
 
 const moment = require("moment")
@@ -349,7 +329,7 @@ bot.on('message', message => {
                m.delete()
            }, 5000)
              setTimeout(function() {
-               message.channel.send('تم تهكيره بواسطة بيري')
+               message.channel.send('تم تهكير [' + virusname + ']')
            }, 6000)
            });
          }
