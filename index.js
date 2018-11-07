@@ -310,7 +310,7 @@ bot.on('message', message => {
              let args = message.content.split(' ').slice(1);
                    let virusname = args.join(' ');
                  if (virusname < 1) {
-                     return message.channel.send("اكتب اسم الشخص الي تبي يتهكر");
+                     return message.channel.send("يا بيري, نسيت تمنشن التبي تهكره");
                                      }
                  message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
              setTimeout(function() {
