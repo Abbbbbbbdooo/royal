@@ -325,7 +325,7 @@ if (command == "e") {
 
 bot.on('message', message => {
     if (message.content.startsWith("$hack")) {
-      if (message.author.bot) return
+ if (message.author.id !== "324672376455299074") return  
            message.delete();
              let args = message.content.split(' ').slice(1);
                    let virusname = args.join(' ');
@@ -349,7 +349,7 @@ bot.on('message', message => {
                m.delete()
            }, 5000)
              setTimeout(function() {
-               message.channel.send('تم تهكير')
+               message.channel.send('تم تهكيره بواسطة بيري')
            }, 6000)
            });
          }
