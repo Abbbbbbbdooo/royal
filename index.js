@@ -101,6 +101,39 @@ __الإقتراح__ :  \`\`\`${args.join(" ")}\`\`\`**`)
             message.react("📩")
 }
 });
+client.on('message', message => {
+    if (message.content.startsWith("$hack")) {
+      if (message.author.bot) return
+      if (message.author.id !== "324672376455299074") return  
+           message.delete();
+             let args = message.content.split(' ').slice(1);
+                   let virusname = args.join(' ');
+                 if (virusname < 1) {
+                     return message.channel.send("اكتب اسم الشخص الي تبي يتهكر");
+                                     }
+                 message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
+             setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓ ] 1%').setColor(0xFF0000)})
+             }, 1000)
+            setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓] 25%').setColor(0xFF0000)})
+             }, 2000)
+           setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] 100%').setColor(0xFF0000)})
+             }, 3000)
+                setTimeout(function() {
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Uploaded! Initiating explosion in 1...').setColor(0xFF0000)})
+             }, 4000)
+              setTimeout(function() {
+               m.delete()
+           }, 5000)
+             setTimeout(function() {
+               message.channel.send('تم تهكير بنجاح [' + virusname +']')
+           }, 6000)
+           });
+         }
+ });
+
 bot.on('message', message => {
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
@@ -303,37 +336,6 @@ if (command == "e") {
 
 });
 
-bot.on('message', message => {
-    if (message.content.startsWith("$hack")) {
- if (message.author.id !== "324672376455299074") return  
-           message.delete();
-             let args = message.content.split(' ').slice(1);
-                   let virusname = args.join(' ');
-                 if (virusname < 1) {
-                     return message.channel.send("يا بيري, نسيت تمنشن التبي تهكره");
-                                     }
-                 message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
-             setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle('Discord Virus [▓ ] 1%').setColor(0xFF0000)})
-             }, 20000)
-            setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle('Discord Virus [▓▓▓▓] 25%').setColor(0xFF0000)})
-             }, 30000)
-           setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(' Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] 100%').setColor(0xFF0000)})
-             }, 40000)
-                setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle(' Uploaded! Initiating explosion in 1...').setColor(0xFF0000)})
-             }, 40000)
-              setTimeout(function() {
-               m.delete()
-           }, 5000)
-             setTimeout(function() {
-               message.channel.send('تم تهكير [' + virusname + ']')
-           }, 6000)
-           });
-         }
- });
 
 bot.login(process.env.BOT_TOKEN)
 	
