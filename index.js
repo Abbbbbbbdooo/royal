@@ -314,16 +314,16 @@ bot.on('message', message => {
                                      }
                  message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
              setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓ ] 1%').setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle('Discord Virus [▓ ] 1%').setColor(0xFF0000)})
              }, 20000)
             setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓] 25%').setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle('Discord Virus [▓▓▓▓] 25%').setColor(0xFF0000)})
              }, 30000)
            setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] 100%').setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(' Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] 100%').setColor(0xFF0000)})
              }, 40000)
                 setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Uploaded! Initiating explosion in 1...').setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle(' Uploaded! Initiating explosion in 1...').setColor(0xFF0000)})
              }, 40000)
               setTimeout(function() {
                m.delete()
