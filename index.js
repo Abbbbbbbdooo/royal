@@ -3,37 +3,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 
-  bot.on('message', message => { 
-if(message.content.startsWith(prefix + 'sug')) {
-      if(!message.channel.guild) return message.reply(`هذا الأمر فقط ل السيرفرات :x:`);
-   let args = message.content.split(" ").slice(1);
-   var ID = message.author.id 
-   var emben = new Discord.RichEmbed()
-   .setTimestamp()
-   .setTitle(`:x: Error`)
-   .setDescription(`الرجاء كتابت إقتراحك بعد الأمر `)
-   if(!args.join(" ")) return message.channel.send(emben).then(message => {message.delete(50000)});
-   var embet = new Discord.RichEmbed()
-   .setTitle(`:white_check_mark: Success!`)
-   .setTimestamp()
-   .setDescription(`شكراً على اقتراحك !`)
-.addField(`إقتراحك : `,args.join(" "))
-   var embed = new Discord.RichEmbed()
-   .setTimestamp()
-   .setColor('RANDOM')
-   .setThumbnail(message.author.avatarURL)
-   .setFooter(`${message.author.username}#${message.author.discriminator}`)
-   .setTitle(`${bot.user.username}`)
-   .setURL(`${bot.user.avatarURL}`)
-   .setDescription(`**
-__المقترح__ :\n <@${ID}>\n
-__الإقتراح__ :  \`\`\`${args.join(" ")}\`\`\`**`)
-           bot.channels.get("500361564969369601").send(embed)
-  message.channel.sendEmbed(embet).then(message => {message.delete(50000)})
-            message.react("📩")
-}
-});
-
 bot.on('message', message => {
     if(message.content.startsWith(prefix + 'new')) {
         let args = message.content.split(' ').slice(1).join(' ');
@@ -149,55 +118,9 @@ message.guild.unban(ns);
 });
 
 
-bot.on('message', message => {
-    let log = message.guild.channels.find('name', 'alarms');
-    let reason = message.content.split(" ").slice(2).join(' ');
-    let p = message.mentions.members.first();
-    if(message.content.startsWith(prefix + "warn")){
-        if (!message.member.roles.find('name','ادارة')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
-        if(!p) return message.reply(`منشن المذنب :slight_smile: `);
-        if(reason.length < 1) return message.reply(`اكتب سبب!`)
-        var embed = new Discord.RichEmbed()
-        .setTitle('**The Royal Warns**')
-        .setColor("RANDOM")
-        .setThumbnail(`${message.author.avatarURL}`)
-        .addField('تحذير لـ', `<@${p.user.id}>`)
-        .addField('بواسطة', `<@${message.author.id}>`)
-        .addField('السبب', reason)	
-        .addField('تم تحذير العضو من روم', `<#${message.channel.id}>`);
-            message.channel.send(`**تم تحذير العضو** :white_check_mark: `)
-            message.delete();
-        log.send({embed})
-    }
-});
-
-bot.on('message', message => {
-    let log = message.guild.channels.find('name', 'alarms');
-    let punsh = message.content.split(" ").slice(2).join(' ');
-    let p = message.mentions.members.first();
-    if(message.content.startsWith(prefix + "punsh")){
-        if (!message.member.roles.find('name', 'ادارة')) return message.reply('**هذا الأمر مخصص للادارة فقط !**').then(message => message.delete(3000));
-        if(!p) return message.reply(`منشن  المعاقب :slight_smile: `);
-        if(punsh.length < 1) return message.reply(`اكتب العقاب!`)    
-        var embed = new Discord.RichEmbed()
-        .setTitle('**The Royal Punshiments**')
-        .setColor("RANDOM")
-        .setThumbnail(`${message.author.avatarURL}`)
-        .addField('تم معاقبة', `<@${p.user.id}>`)
-        .addField('بواسطة', `<@${message.author.id}>`)
-        .addField('العقاب', punsh)	
-        .addField('تم جمع البيانات من روم', `<#${message.channel.id}>`);
-            message.channel.send(`**تم تدوين العقاب** :white_check_mark: `)
-            message.delete();
-        log.send({embed})
-    }
-});
-
-
-
 const moment = require("moment")
 bot.on("guildMemberAdd", m => {
-        let room = m.guild.channels.find(a => a.name === 'log'); //
+        let room = m.guild.channels.find(a => a.name === 'fake'); //
     if (datediff(parseDate(moment(m.user.createdTimestamp).format('l')), parseDate(moment().format('l'))) < 2) {
         m.ban() .then((
             room.send(`**:no_entry: | ${m} Has been banned for: \`fake\`**`)
@@ -211,29 +134,6 @@ bot.on("guildMemberAdd", m => {
     function datediff(first, second) {
         return Math.round((second-first)/(1000*60*60*24));
     };
-});
-
-
-bot.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-  
- 
-
-if (command == "e") {
-    let say = new Discord.RichEmbed()
-    .setDescription(args.join("  "))
-    .setColor("RANDOM")
-    message.channel.sendEmbed(say);
-    message.delete();
-  }
-
-
 });
 
 
