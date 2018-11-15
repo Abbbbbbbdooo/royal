@@ -3,59 +3,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 
-bot.on('message', message => {
-    if(message.content.startsWith(prefix + 'new')) {
-        let args = message.content.split(' ').slice(1).join(' ');
-        let support = message.guild.roles.find("name","Support");
-        let ticketsStation = message.guild.channels.find("name", "TICKETS");
-        if(!args) {
-            return message.channel.send('اكتب موضوع التكت.');
-        };
-                if(!support) {
-                    return message.channel.send('**`Support` تأكد من وجود رتبة**');
-                };
-            if(!ticketsStation) {
-                message.guild.createChannel("TICKETS", "category");
-            };
-                message.guild.createChannel(`ticket-${message.author.id}`, "text").then(ticket => {
-                    message.delete()
-                        message.channel.send(`تم انشاء تذكرة. [ ${ticket} ]`);
-                    ticket.setParent(ticketsStation);
-                    ticketsStation.setPosition(1);
-                        ticket.overwritePermissions(message.guild.id, {
-                            SEND_MESSAGES: false,
-                            READ_MESSAGES: false
-                        });
-                            ticket.overwritePermissions(support.id, {
-                                SEND_MESSAGES: true,
-                                READ_MESSAGES: true
-                            });
-                                ticket.overwritePermissions(message.author.id, {
-                                    SEND_MESSAGES: true,
-                                    READ_MESSAGES: true
-                                });
-                    let embed = new Discord.RichEmbed()
-                                .setTitle('**The Royal Manager**')
-                                .setColor("RANDOM")
-                                .setThumbnail(`${message.author.avatarURL}`)
-                                .addField('الموضوع', args)
-                                .addField('صاحب التكت', message.author)
-                                .addField('تم انشاء التكت من روم', `<#${message.channel.id}>`);
-
-                                ticket.sendEmbed(embed);
-                }) .catch();
-    }
-    if(message.content.startsWith(prefix + 'close')) {
-            if(!message.member.hasPermission("ADMINISTRATOR")) return;
-        if(!message.channel.name.startsWith("ticket")) {
-            return;
-        };  
-                            message.channel.delete();
-
-
-            
-    }
-});
 
 
 
