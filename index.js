@@ -65,29 +65,6 @@ message.guild.unban(ns);
 });
 
 
-bot.on('message', message => {
-    
-    if (message.content === "رويال ليجيند") {
-        setInterval(function(){
-        message.channel.send('**T**')
-        message.edit('**Th**')    
-        message.edit('**The**')    
-        message.edit('**The R**')
-        message.edit('**The Ro**')
-        message.edit('**The Roy**')
-        message.edit('**The Roya**')
-        message.edit('**The Royal**')
-        message.edit('**The Royal L**')
-        message.edit('**The Royal Le**')
-        message.edit('**The Royal Leg**')
-        message.edit('**The Royal Lege**')
-        message.edit('**The Royal Legen**')
-        message.edit('**The Royal Legend**')
-        message.edit('**🌟 The Royal Legend 🌟**')
-        }, 1000)
-    }
-    
-})
 
 bot.login(process.env.BOT_TOKEN)
 	
