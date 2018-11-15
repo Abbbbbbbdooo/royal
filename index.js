@@ -69,6 +69,7 @@ bot.on('message', message => {
     
     if (message.content === "رويال ليجيند") {
         setInterval(function(){
+        message.channel.send('**T**')
         message.edit('**Th**')    
         message.edit('**The**')    
         message.edit('**The R**')
