@@ -65,7 +65,7 @@ message.guild.unban(ns);
 });
 
 
-client.on('message', message => {
+bot.on('message', message => {
     
     if (message.content === "رويال ليجيند") {
         setInterval(function(){
